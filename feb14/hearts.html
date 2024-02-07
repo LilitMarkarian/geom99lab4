@@ -31,7 +31,8 @@
   basemap: {
     style: { // autocasts to BasemapStyle
       id: "arcgis/newspaper",
-      language: "en" // place labels will be displayed in spanish
+      language: "en",
+      container: "viewDiv"
     }
   }
 }); 
@@ -39,7 +40,7 @@
   const view = new MapView({
     map: map,
     center: [31.75169, -30.53356],
-    zoom: 10,
+    zoom: 13,
     container: "viewDiv"
 });
 
@@ -48,7 +49,6 @@
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer/0"
   });
 
-  map.add(map);
   map.add(hearts);
 
   });
