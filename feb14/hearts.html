@@ -1,8 +1,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS Maps SDK for JavaScript Tutorials: Add a feature layer</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
+  <title>Love is All Around Us</title>
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -27,17 +27,17 @@
   esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
 
   const map = new Map({
-    basemap: "arcgis/topographic"
+    basemap: "arcgis/light-gray"
   });
 
   const view = new MapView({
     container: "viewDiv",
     map: map,
     center: [31.7516901, -30.5335660],
-    zoom: 13
+    zoom: 10
   });
 
-// hearts (polygons)
+  hearts (polygons)
   const hearts = new FeatureLayer({
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer/0"
   });
@@ -46,7 +46,6 @@
 
   });
 </script>
-
 </head>
 <body>
   <div id="viewDiv"></div>
