@@ -19,11 +19,10 @@
     "esri/config",
     "esri/Map",
     "esri/views/MapView",
-    "esri/Basemap"
 
     "esri/layers/FeatureLayer"
 
-  ], function(esriConfig, Map, MapView, FeatureLayer, Basemap) {
+  ], function(esriConfig, Map, MapView, FeatureLayer) {
 
   esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
 
@@ -40,10 +39,10 @@
 
   // hearts (polygons)
   const hearts = new FeatureLayer({
-    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer/0"
+    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer"
   });
 
-  map.add(hearts, 0);
+  map.add(hearts);
 
   });
 </script>
