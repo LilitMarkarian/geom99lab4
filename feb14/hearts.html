@@ -25,14 +25,14 @@
   ], function (Map, MapView, FeatureLayer) {
 
 const map = new Map({
-  basemap: "modern-antique", 
+  basemap: "gray", 
 });
     
-  const view = new MapView({
-    map: map,
-    center: [34.7111, -40.2917],
-    zoom: 4,
-    container: "viewDiv"
+const view = new MapView({
+  map: map,
+  center: [34.7111, -40.2917],
+  zoom: 4,
+  container: "viewDiv"
 });
 
   // hearts (polygons)
