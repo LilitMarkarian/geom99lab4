@@ -13,19 +13,23 @@
             margin: 0;
             height: 100%;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
-
-        #pageTitle {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #FF7F7F
-        }
+        .title{
+        	display:flex;
+        	flex-direction: column;
+         }
+         h1 {
+    	 text-align: center;
+         color: #FF7F7F;
+    	 font-size:28px;
+    	 font-family: helvetica, arial, sans-serif;
+    	 padding-left: 10px;
+    	 padding-right: 10px;
+    	 margin-top: 5px;
+    	 padding-top: 20px;
+       }
     </style>
+    
     <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.28/"></script>
     <script>
@@ -58,8 +62,10 @@
 </head>
 
 <body>
+    <div class="title">
+        <h1> Love Is All Around Us </h1>
+    </div>
     <div id="viewDiv">
-        <div id="pageTitle">Love Is All Around Us</div>
     </div>
 </body>
 
