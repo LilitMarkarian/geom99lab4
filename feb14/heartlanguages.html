@@ -1,10 +1,8 @@
-<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
-    <title>Love is All Around Us</title>
+    <title> Love is All Around Us </title>
     <style>
         html,
         body,
@@ -31,11 +29,12 @@
             "esri/views/MapView",
             "esri/intl",
             "esri/layers/FeatureLayer"
-        ], (esriConfig, Map, MapView, intl, FeatureLayer) => {
-
-            esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
-
-            intl.setLocale("es");
+            
+        ], function(esriConfig,Map, MapView, intl, FeatureLayer) {
+            
+     esriConfig.apiKey= "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
+            
+            intl.setLocale("en"); 
 
             const map = new Map({
                 basemap: {
@@ -49,13 +48,13 @@
             const view = new MapView({
                 container: "viewDiv",
                 map: map,
-                center: [28.979983159345505, -34.19196611209832],
+                center: [28.979983159, -34.19196611],
                 zoom: 13
             });
 
             // Feature Layer (replace the URL with your own feature layer)
             const myPolygonFeatureLayer = new FeatureLayer({
-                url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer"
+                url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer/0"
             });
 
             map.add(myPolygonFeatureLayer);
