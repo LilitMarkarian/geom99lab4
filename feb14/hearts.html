@@ -13,8 +13,8 @@
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.28/"></script>
-
   <script>
+    
   require([
     "esri/config",
     "esri/Map",
@@ -31,13 +31,13 @@
   });
 
   const view = new MapView({
-    container: "viewDiv",
     map: map,
     center: [31.7516901, -30.5335660],
-    zoom: 10
+    zoom: 10,
+    container: "viewDiv"
   });
 
-  hearts (polygons)
+  // hearts (polygons)
   const hearts = new FeatureLayer({
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer/0"
   });
