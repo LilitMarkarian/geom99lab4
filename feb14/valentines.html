@@ -26,7 +26,7 @@
     ], function(esriConfig, Map, MapView, FeatureLayer, Editor) {
 
       // Reference a feature layer to edit
-      const myPointsFeatureLayer = new FeatureLayer({
+      const myPolygonFeatureLayer = new FeatureLayer({
         url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer"
       });
 
@@ -35,7 +35,7 @@
       const map = new Map({
         basemap: "arcgis/light-gray", // basemap style to make it look light-gray
 
-        layers: [myPointsFeatureLayer]
+        layers: [myPolygonFeatureLayer]
 
       });
 
@@ -43,7 +43,7 @@
         container: "viewDiv",
         map: map,
         center: [29.52723447280902,-38.54419989792563],
-        zoom: 13
+        zoom: 14
       });
 
       // Editor widget
