@@ -17,7 +17,6 @@
   <script>
     
   require([
- //   "esri/config",
     "esri/Map",
     "esri/views/MapView",
 
@@ -25,15 +24,13 @@
 
   ], function (Map, MapView, FeatureLayer) {
 
- //esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
-
 const map = new Map({
   basemap: "gray", 
 });
     
   const view = new MapView({
     map: map,
-    center: [34.711144594987, -40.291735629117],
+    center: [34.7111, -40.2917],
     zoom: 4,
     container: "viewDiv"
 });
