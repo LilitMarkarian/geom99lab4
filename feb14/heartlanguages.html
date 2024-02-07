@@ -24,12 +24,15 @@
     <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.9.2/calcite.css">
     <script>
         require([
+            "esri/Config",
             "esri/Map",
             "esri/views/MapView",
             "esri/intl",
             "esri/layers/FeatureLayer"
             
-        ], function(Map, MapView, intl, FeatureLayer) {
+        ], function(esriConfig,Map, MapView, intl, FeatureLayer) {
+
+              esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
             
             intl.setLocale("en"); 
 
