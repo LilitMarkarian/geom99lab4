@@ -29,14 +29,23 @@
 
   const map = new Map({
     basemap: "arcgis/newspaper"
-  });
+});
+
+   const map = new Map({
+  basemap: {
+    style: { // autocasts to BasemapStyle
+      id: "arcgis/newspaper",
+      language: "en" // place labels will be displayed in spanish
+    }
+  }
+}); 
     
   const view = new MapView({
     map: map,
     center: [31.7516901, -30.5335660],
     zoom: 13,
     container: "viewDiv"
-  });
+});
 
   // hearts (polygons)
   const hearts = new FeatureLayer({
