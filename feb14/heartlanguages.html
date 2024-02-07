@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>
-        Love Is All Around US
-    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <title>Love is All Around Us</title>
     <style>
         html,
         body,
@@ -16,49 +16,58 @@
         }
 
         #basemapLanguage {
-            width: 100px;
+            width: 200px;
             padding: 10px;
         }
     </style>
-
     <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.28/"></script>
-
     <script type="module" src="https://js.arcgis.com/calcite-components/1.9.2/calcite.esm.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.9.2/calcite.css" />
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/1.9.2/calcite.css">
     <script>
         require([
             "esri/config",
             "esri/Map",
             "esri/views/MapView",
-            "esri/layers/FeatureLayer",
-            "esri/widgets/Editor",
-            "esri/intl"
-        ], function (esriConfig, Map, MapView, FeatureLayer, Editor, intl) {
+            "esri/intl",
+            "esri/layers/FeatureLayer"
+        ], (esriConfig, Map, MapView, intl, FeatureLayer) => {
 
-            // Reference a feature layer to edit
+            esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
+
+            intl.setLocale("es");
+
+            const map = new Map({
+                basemap: {
+                    style: {
+                        id: "arcgis/light-gray",
+                        language: "en"
+                    }
+                }
+            });
+
+            const view = new MapView({
+                container: "viewDiv",
+                map: map,
+                center: [28.979983159345505, -34.19196611209832],
+                zoom: 13
+            });
+
+            // Feature Layer (replace the URL with your own feature layer)
             const myPolygonFeatureLayer = new FeatureLayer({
                 url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer"
             });
 
-            esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
+            map.add(myPolygonFeatureLayer);
 
-            intl.setLocale("en");
-
-            const map = new Map({
-                basemap: "arcgis/light-gray", // basemap style to make it look light-gray
-                layers: [myPolygonFeatureLayer]
-            });
-
-            const view = new MapView({
-                map: map,
-                center: [29.5272, -38.5441], // Longitude, latitude
-                zoom: 10, // Zoom level
-                container: "viewDiv" // Div element
-            });
-
-            const updateLanguage = (languageCode) => {
+            const updateBasemapLanguage = (languageCode) => {
                 intl.setLocale(languageCode);
+                view.map.basemap = {
+                    style: {
+                        id: "arcgis/light-gray",
+                        language: languageCode
+                    }
+                };
             };
 
             const basemapLanguage = document.getElementById("basemapLanguage");
@@ -66,13 +75,13 @@
 
             const languageCombobox = document.getElementById("languageCombobox");
             languageCombobox.addEventListener("calciteComboboxChange", (event) => {
-                const selectedLanguage = event.target.value;
-                updateLanguage(selectedLanguage);
+                updateBasemapLanguage(event.target.value);
             });
 
         });
     </script>
 </head>
+
 <body>
     <div id="viewDiv"></div>
 
@@ -87,7 +96,7 @@
             <calcite-combobox-item value="hr" text-label="Croatian"></calcite-combobox-item>
             <calcite-combobox-item value="cs" text-label="Czech"></calcite-combobox-item>
             <calcite-combobox-item value="nl" text-label="Dutch"></calcite-combobox-item>
-            <calcite-combobox-item value="en" text-label="English"></calcite-combobox-item>
+            <calcite-combobox-item value="en" text-label="English" selected></calcite-combobox-item>
             <calcite-combobox-item value="fi" text-label="Finnish"></calcite-combobox-item>
             <calcite-combobox-item value="fr" text-label="French"></calcite-combobox-item>
             <calcite-combobox-item value="de" text-label="German"></calcite-combobox-item>
@@ -98,7 +107,7 @@
             <calcite-combobox-item value="nb" text-label="Norwegian"></calcite-combobox-item>
             <calcite-combobox-item value="pt-PT" text-label="Portuguese (Portugal)"></calcite-combobox-item>
             <calcite-combobox-item value="ru" text-label="Russian"></calcite-combobox-item>
-            <calcite-combobox-item value="es" text-label="Spanish" selected></calcite-combobox-item>
+            <calcite-combobox-item value="es" text-label="Spanish"></calcite-combobox-item>
             <calcite-combobox-item value="sv" text-label="Swedish"></calcite-combobox-item>
             <calcite-combobox-item value="th" text-label="Thai"></calcite-combobox-item>
             <calcite-combobox-item value="vi" text-label="Vietnamese"></calcite-combobox-item>
@@ -106,4 +115,3 @@
     </div>
 </body>
 </html>
-
