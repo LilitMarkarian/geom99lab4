@@ -38,8 +38,8 @@
     
   const view = new MapView({
     map: map,
-    center: [31.7516901, -30.5335660],
-    zoom: 13,
+    center: [31.75169, -30.53356],
+    zoom: 10,
     container: "viewDiv"
 });
 
@@ -48,6 +48,7 @@
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/hearts/FeatureServer/0"
   });
 
+  map.add(map);
   map.add(hearts);
 
   });
