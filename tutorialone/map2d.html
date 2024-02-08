@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
+  <title> Display a map: Oceans</title>
   <style>
     html, body, #viewDiv {
     padding: 0;
@@ -12,7 +12,7 @@
   }
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-  <link rel="basemaps" href="https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/webmaps/arcgis/terrain">
+  <link rel="basemaps" href="https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/webmaps/arcgis/oceans">
   <script src="https://js.arcgis.com/4.28/">    
   </script>
   <script>
@@ -27,7 +27,7 @@
   esriConfig.apiKey = "AAPK04e34aeee6164926b916100e232a635eogcxlbsMy48Jx_poDUDO3YK2gMXxquDVrF27l2JKfVwDpzj7uYJZ7XD5twcFdU7E";
              
   const map = new Map({
-    basemap:"terrain"
+    basemap:"oceans"
   });
            
   const view = new MapView({
